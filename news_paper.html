@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - KCGC World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Add styles for the news slider */
+        .news-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        .news-slide {
+            min-width: 300px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+        .news-slide img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+        }
+        .news-slide h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .read-more {
+            display: inline-block;
+            margin: 10px;
+            padding: 8px 12px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        /* Enlarge article overlay styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .close-btn {
+            cursor: pointer;
+            float: right;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div class="header">
+            <a href="index.html"> <!-- Link only on the logo -->
+                <img src="KCGC/logo.jpg" alt="Your Logo" class="logo">
+            </a>
+            <span class="club-name">KEY CLUB</span> <!-- Static text next to the logo -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="actions.html"><i class="fa fa-tasks"></i> Actions</a></li>
+                <li><a href="gallery.html"><i class="fa fa-image"></i> Gallery</a></li>
+                <li><a href="news_paper.html"><i class="fa fa-newspaper"></i> News Paper</a></li> <!-- Moved News Paper here -->
+                <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="welcome-section">
+        <h1>Welcome to the News Paper Section</h1>
+        <p>Latest news and updates will be available here.</p>
+    </div>
+    
+    <section class="news-slider">
+        <div class="news-slide" onclick="showArticle('News Title 1', 'Content for news article 1...')">
+            <img src="KCGC/1.jpeg" alt="News 1">
+            <h2>News Title 1</h2>
+            <p>Short description of the news article 1...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 2', 'Content for news article 2...')">
+            <img src="KCGC/2.jpeg" alt="News 2">
+            <h2>News Title 2</h2>
+            <p>Short description of the news article 2...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 3', 'Content for news article 3...')">
+            <img src="KCGC/3.jpeg" alt="News 3">
+            <h2>News Title 3</h2>
+            <p>Short description of the news article 3...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 4', 'Content for news article 4...')">
+            <img src="KCGC/4.jpeg" alt="News 4">
+            <h2>News Title 4</h2>
+            <p>Short description of the news article 4...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 5', 'Content for news article 5...')">
+            <img src="KCGC/5.jpeg" alt="News 5">
+            <h2>News Title 5</h2>
+            <p>Short description of the news article 5...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 6', 'Content for news article 6...')">
+            <img src="KCGC/6.jpeg" alt="News 6">
+            <h2>News Title 6</h2>
+            <p>Short description of the news article 6...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 7', 'Content for news article 7...')">
+            <img src="KCGC/7.jpeg" alt="News 7">
+            <h2>News Title 7</h2>
+            <p>Short description of the news article 7...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 8', 'Content for news article 8...')">
+            <img src="KCGC/8.jpeg" alt="News 8">
+            <h2>News Title 8</h2>
+            <p>Short description of the news article 8...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 9', 'Content for news article 9...')">
+            <img src="KCGC/9.jpeg" alt="News 9">
+            <h2>News Title 9</h2>
+            <p>Short description of the news article 9...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 10', 'Content for news article 10...')">
+            <img src="KCGC/10.jpeg" alt="News 10">
+            <h2>News Title 10</h2>
+            <p>Short description of the news article 10...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 11', 'Content for news article 11...')">
+            <img src="KCGC/11.jpeg" alt="News 11">
+            <h2>News Title 11</h2>
+            <p>Short description of the news article 11...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="news-slide" onclick="showArticle('News Title 12', 'Content for news article 12...')">
+            <img src="KCGC/12.jpeg" alt="News 12">
+            <h2>News Title 12</h2>
+            <p>Short description of the news article 12...</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="News Image">
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <script>
+        // Get modal elements
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
+        const closeModal = document.getElementById('close');
+    
+        // Function to open the modal
+        function openModal(title, image, description) {
+            modalTitle.textContent = title;
+            modalImage.src = image;
+            modalDescription.textContent = description;
+            modal.style.display = 'block';
+        }
+    
+        // Close modal when clicking on the close button
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+        }
+    
+        // Close modal when clicking outside of modal content
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    
+        // Add click event to each news slide
+        document.querySelectorAll('.news-slide').forEach(slide => {
+            slide.onclick = function() {
+                const title = this.querySelector('h2').textContent;
+                const image = this.querySelector('img').src;
+                const description = this.querySelector('p').textContent;
+                openModal(title, image, description);
+            };
+        });
+    </script>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">&times;</span>
+            <h2 id="overlay-title"></h2>
+            <p id="overlay-content"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <a href="https://www.instagram.com/key_club_gabes_coast/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/120Your `news_paper.html` file looks well-structured and visually appealing. Here are a few suggestions for improvements or enhancements you might consider:
+
+1. **Image Alt Text:** Ensure that the `alt` attributes for the images provide descriptive text that accurately reflects the content. This is beneficial for accessibility and SEO.
+
+2. **CSS for News Slider:** If you haven’t already, consider adding CSS for the `.news-slider` class to ensure the news items are displayed properly (e.g., grid layout or flexbox). This can help create a more organized and visually appealing layout.
+
+3. **Responsive Design:** Ensure that the design is responsive. You might want to use media queries in your CSS to adjust the layout for different screen sizes.
+
+4. **Loading Optimization:** Consider optimizing your images for faster loading times. This could involve reducing their file sizes or using formats like WebP.
+
+5. **Navigation Improvements:** Adding hover effects to the navigation links can enhance user experience. It visually indicates which link is active or can be clicked.
+
+6. **Content Organization:** Depending on how frequently you post updates, consider implementing pagination or a "load more" button to avoid overwhelming users with too many news articles at once.
+
+7. **Footer Social Media Links:** Ensure the links to social media are working correctly. Consider adding titles to the links for better accessibility and usability.

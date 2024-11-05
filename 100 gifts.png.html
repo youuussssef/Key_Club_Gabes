@@ -3,58 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 Gifts - KCGC World</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS file -->
+    <title>News Paper</title>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <a href="index.html"> <!-- Link only on the logo -->
-                <img src="KCGC/logo.jpg" alt="Your Logo" class="logo">
-            </a>
-            <span class="club-name">KEY CLUB</span> <!-- Static text next to the logo -->
+    <div class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <nav>
-            <ul>
-              <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-              <li><a href="actions.html"><i class="fa fa-tasks"></i> Actions</a></li>
-              <li><a href="gallery.html"><i class="fa fa-image"></i> Gallery</a></li>
-              <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
-            </ul>
-          </nav>
-    </header>
+        <div class="menu">
+            <a href="index.html" class="nav-icon" id="home-icon">🏠 Home</a>
+            <a href="actions.html" class="nav-icon" id="actions-icon">📋 Actions</a>
+            <a href="gallery.html" class="nav-icon" id="gallery-icon">🖼️ Gallery</a>
+            <a href="contact.html" class="nav-icon" id="contact-icon">📞 Contact</a>
+            <a href="news_paper.html" class="nav-icon" id="news-paper-icon">📰 News Paper</a>
+        </div>
+    </div>
 
-    <section id="100-gifts">
-        <h2>100 Gifts</h2>
-        <div class="gifts-text">
-            <p>Description of the 100 Gifts event goes here. Provide detailed information about the event, its purpose, and any notable outcomes or highlights.</p>
+    <main>
+        <h1>News Paper Section</h1>
+        <p>Welcome to the News Paper section. Here you can find the latest updates and articles.</p>
+        <div class="articles">
+            <article>
+                <h2>Article Title 1</h2>
+                <p>Summary of the article goes here. You can provide details or highlights of the article.</p>
+            </article>
+            <article>
+                <h2>Article Title 2</h2>
+                <p>Summary of the article goes here. You can provide details or highlights of the article.</p>
+            </article>
+            <!-- Add more articles as needed -->
         </div>
-        <div class="media">
-            <img src="path/to/100_gifts_photo.jpg" alt="100 Gifts Photo">
-            <video controls>
-                <source src="path/to/100_gifts_video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </section>
+    </main>
 
- 
-   
     <footer>
-        <div class="footer">
-            <a href="https://www.instagram.com/key_club_gabes_coast/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100080021875286" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="social-icon">
-            </a>
-            <a href="https://www.tiktok.com/@keyclubgabescoast?" target="_blank">
-                <img src="https://static.vecteezy.com/system/resources/previews/021/495/986/non_2x/tiktok-social-media-logo-icon-free-png.png" alt="TikTok" class="social-icon">
-            </a>
-            <p>&copy; 2024 KCGC World. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Your Club Name</p>
+        <!-- You can include footer links or other elements here -->
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

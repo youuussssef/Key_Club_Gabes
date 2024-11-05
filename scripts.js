@@ -30,4 +30,23 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 document.getElementById("executive-board-photo").onclick = function() {
     this.classList.toggle("enlarged");
 };
+let currentIndex = 0;
 
+function showSlide(index) {
+    const slides = document.querySelectorAll('.news-slide');
+    slides.forEach((slide, i) => {
+        slide.style.display = (i === index) ? 'block' : 'none';
+    });
+}
+
+function nextSlide() {
+    const slides = document.querySelectorAll('.news-slide');
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+// Automatically change slide every 3 seconds
+setInterval(nextSlide, 3000);
+
+// Show the first slide
+showSlide(currentIndex);
