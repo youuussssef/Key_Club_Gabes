@@ -1153,15 +1153,3 @@ img {
     filter: contrast(1.1) brightness(1.05) saturate(1.1);
     image-rendering: auto; /* Adjusts image scaling to preserve quality */
 }
-@media (max-width: 768px) {
-    .icon-container {
-        display: flex;
-        justify-content: center; /* Centers icons */
-        flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    }
-
-    .icon {
-        width: 50px; /* Adjust the size of the icons */
-        margin: 10px; /* Spacing between icons */
-    }
-}
