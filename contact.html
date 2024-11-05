@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - KCGC World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Unique contact form style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: #0056b3;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #004494;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #0056b3;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html"> <!-- Link only on the logo -->
+                <img src="KCGC/logo.jpg" alt="Your Logo" class="logo">
+            </a>
+            <span class="club-name">KEY CLUB</span> <!-- Static text next to the logo -->
+        </div>
+        <nav>
+            <ul>
+              <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+              <li><a href="actions.html"><i class="fa fa-tasks"></i> Actions</a></li>
+              <li><a href="gallery.html"><i class="fa fa-image"></i> Gallery</a></li>
+              <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+            </ul>
+          </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <form action="success.html" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <form action="success.html" method="POST"></form>
+    </main>
+
+   
+  
+    <footer>
+        <div class="footer">
+            <a href="https://www.instagram.com/key_club_gabes_coast/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100080021875286" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com/@keyclubgabescoast?" target="_blank">
+                <img src="https://static.vecteezy.com/system/resources/previews/021/495/986/non_2x/tiktok-social-media-logo-icon-free-png.png" alt="TikTok" class="social-icon">
+            </a>
+            <p>&copy; 2024 KCGC World. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
