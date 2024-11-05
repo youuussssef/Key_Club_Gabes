@@ -1180,3 +1180,15 @@ img {
         width: auto; /* Set width as needed */
     }
 }
+.container {
+    width: 100%; /* Use 100% width */
+    padding: 10px; /* Use padding instead of fixed margins */
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically on smaller screens */
+    }
+    .menu {
+        display: block; /* Ensure the menu is displayed on smaller screens */
+    }
+}
