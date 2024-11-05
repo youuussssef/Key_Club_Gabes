@@ -1165,3 +1165,18 @@ img {
         margin: 10px; /* Spacing between icons */
     }
 }
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+    .your-element {
+        width: 100%; /* Set width to 100% on mobile */
+        height: auto; /* Adjust height automatically */
+    }
+}
+
+/* Styles for larger screens */
+@media (min-width: 769px) {
+    .your-element {
+        height: 100vh; /* Example height for larger screens */
+        width: auto; /* Set width as needed */
+    }
+}
