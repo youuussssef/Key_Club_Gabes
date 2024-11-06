@@ -1290,3 +1290,54 @@ img {
         margin: 0;
     }
 }
+/* First part: Flex layout for large screens */
+nav ul {
+    display: flex;
+    justify-content: space-between; /* Ensures items are spaced out */
+    align-items: center; /* Vertically centers the items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center; /* Ensures text and icon align */
+    text-decoration: none;
+    color: #000; /* Adjust based on your color scheme */
+}
+
+nav ul li i {
+    margin-right: 8px; /* Adds space between icon and text */
+}
+
+/* Second part: Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds space between the navigation items */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Adjust text size for mobile */
+    }
+}
+/* Set text color for navigation links to white */
+nav ul li a {
+    color: white; /* This will make the text white */
+    text-decoration: none; /* Removes underline */
+}
+
+/* Optional: Add hover effect to make text change color when hovered */
+nav ul li a:hover {
+    color: #f0f0f0; /* Light grey for hover effect, you can adjust it */
+}
