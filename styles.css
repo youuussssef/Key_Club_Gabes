@@ -1438,7 +1438,17 @@ html {
     margin: 20px auto;
 }
 
-/* Center the shirt container */
+/* Default styling for larger screens */
+.product-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* 3D shirt container */
 .shirt-container {
     width: 700px;  /* Box width */
     height: 400px;
@@ -1479,6 +1489,38 @@ html {
     }
     100% {
         transform: rotateY(360deg);
+    }
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    /* Product item */
+    .product-item {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    /* 3D shirt container */
+    .shirt-container {
+        width: 90%; /* Ensure the container uses a responsive width */
+        height: 300px; /* Adjust the height for smaller screens */
+    }
+
+    /* Shirt image */
+    .shirt {
+        width: 250px; /* Adjust shirt width for smaller devices */
+        height: 350px; /* Adjust height accordingly */
+    }
+
+    /* Product title */
+    .product-item h2 {
+        font-size: 1.8em; /* Smaller title on mobile */
+    }
+
+    /* Product description */
+    .product-item p {
+        font-size: 1.1em; /* Slightly smaller text on mobile */
+        margin: 10px;
     }
 }
 .product-item p {
