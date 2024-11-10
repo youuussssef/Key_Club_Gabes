@@ -870,20 +870,7 @@ video {
     max-width: 90%;
     max-height: 90%;
   }
-    /* Background gradient animation */
-@keyframes gradientShift {
-    0% { background: #f0f0f0; }
-    50% { background: #e0f7fa; }
-    100% { background: #f0f0f0; }
-  }
-  
-  body {
-    animation: gradientShift 10s infinite alternate;
-  }
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
+
   
   .cta-button {
     animation: pulse 3s infinite;
@@ -1492,56 +1479,165 @@ html {
         transform: rotateY(360deg);
     }
 }
-
-/* Mobile responsive design */
-@media (max-width: 768px) {
-    /* Product item */
-    .product-item {
-        margin: 10px auto;
-        padding: 15px;
-    }
-
-    /* 3D shirt container */
-    .shirt-container {
-        width: 90%; /* Ensure the container uses a responsive width */
-        height: 300px; /* Adjust the height for smaller screens */
-    }
-
-    /* Shirt image */
-    .shirt {
-        width: 250px; /* Adjust shirt width for smaller devices */
-        height: 350px; /* Adjust height accordingly */
-    }
-
-    /* Product title */
-    .product-item h2 {
-        font-size: 1.8em; /* Smaller title on mobile */
-    }
-
-    /* Product description */
-    .product-item p {
-        font-size: 1.1em; /* Slightly smaller text on mobile */
-        margin: 10px;
-    }
+/* Base styling for products section */
+.products-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
 }
-.product-item p {
-    font-size: 1.5em; /* Increases the font size */
-    line-height: 1.6;  /* Optional: Makes the text more readable by increasing the line spacing */
+
+.products-section h1 {
+    font-size: 3em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
+
 .product-item {
-    max-width: 700px;  /* Same width as the 3D container */
-    padding: 30px;
     background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 12px;
     margin: 30px auto;
+    padding: 30px;
+    max-width: 700px; /* Larger width for desktop */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center; /* Ensure all content inside stays centered */
 }
 
+.product-item img {
+    width: 100%; /* Full width, responsive image */
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-item h2 {
+    font-size: 2em;
+    color: #34495e;
+    margin: 15px 0;
+}
+
+.product-item p {
+    color: #7f8c8d;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+/* Shirt container for 3D view */
 .shirt-container {
-    width: 700px;  /* Same width as product description box */
-    height: 400px;
-    margin: 0 auto;
     perspective: 1000px;
+    width: 100%; /* Ensure it takes full width on smaller screens */
+    max-width: 700px; /* For larger screens */
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.shirt {
+    width: 300px; /* Fix width for shirt */
+    height: 400px;
+    transform-style: preserve-3d;
+    animation: rotateShirt 5s infinite linear;
+    position: relative;
+}
+
+.shirt img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+}
+
+.shirt .back {
+    transform: rotateY(180deg);
+}
+
+@keyframes rotateShirt {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+    .product-item {
+        max-width: 90%; /* Ensure it fits well on mobile */
+        padding: 20px; /* Smaller padding for smaller screens */
+    }
+
+    .shirt-container {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .shirt {
+        width: 250px; /* Smaller shirt size for phones */
+        height: 350px;
+    }
+
+    .products-section h1 {
+        font-size: 2.5em;
+    }
+
+    .product-item h2 {
+        font-size: 1.8em;
+    }
+
+    .product-item p {
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+}
+.products-section {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.product-item {
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+}
+/* Gradient Background and Shadow Effect ONLY for Products Page */
+.products-page {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient background for products page */
+    padding: -1 20px;
+}
+
+/* Apply shadow and background for product sections and items only on Products Page */
+.products-page .products-section, 
+.products-page .product-item {
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Responsive Design for Products Page */
+@media (max-width: 768px) {
+    .products-page .products-section, 
+    .products-page .product-item {
+        max-width: 95%;
+    }
+}
+
+/* Home and About Us Pages (no gradient or shadow styles) */
+body:not(.products-page) {
+    background: none; /* No gradient for other pages */
+}
+
+body:not(.products-page) .products-section,
+body:not(.products-page) .product-item {
+    box-shadow: none; /* No shadow for other pages */
 }
