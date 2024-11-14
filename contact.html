@@ -112,7 +112,6 @@
     </style>
 </head>
 <body>
-    <body class="gradient-page"></body>
     <header>
         <div class="header">
             <a href="index.html"> <!-- Link only on the logo -->
@@ -123,8 +122,6 @@
         <nav>
             <ul>
                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                
-                <!-- Membership Dropdown -->
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-user"></i> Membership</a>
                     <div class="dropdown-content">
@@ -143,7 +140,11 @@
 
     <main>
         <h2>Contact Us</h2>
-        <form action="success.html" method="POST">
+        <form action="https://formspree.io/f/mqakbjqp" method="POST">
+            <!-- Hidden input to indicate form submission -->
+            <input type="hidden" name="_next" value="success.html">
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -158,11 +159,8 @@
 
             <button type="submit">Submit</button>
         </form>
-        <form action="success.html" method="POST"></form>
     </main>
 
-   
-  
     <footer>
         <div class="footer">
             <a href="https://www.instagram.com/key_club_gabes_coast/" target="_blank">
@@ -174,7 +172,6 @@
             <a href="https://www.tiktok.com/@keyclubgabescoast?" target="_blank">
                 <img src="https://static.vecteezy.com/system/resources/previews/021/495/986/non_2x/tiktok-social-media-logo-icon-free-png.png" alt="TikTok" class="social-icon">
             </a>
-            <!-- Added YouTube Icon -->
             <a href="https://www.youtube.com/@keyclubgabescoast" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/512px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" class="social-icon">
             </a>
