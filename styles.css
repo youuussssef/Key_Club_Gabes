@@ -1834,3 +1834,26 @@ body.benefits-page {
         font-size: 14px;
     }
 }
+/* Increase the font size of the paragraph within the benefits list */
+.benefits-list p {
+    font-size: 18px; /* Adjust this value as needed for larger text */
+    line-height: 1.8; /* Improves readability */
+    margin-bottom: 20px; /* Adds space between the paragraph and the bullet points */
+}
+
+/* Ensure bullet points have enough spacing */
+.benefits-list ul {
+    padding-left: 20px; /* Increase spacing between bullet points and content */
+}
+
+.benefits-list li {
+    margin-bottom: 10px; /* Space between bullet points */
+}
+
+/* Adjust the heading within the benefits section for consistency */
+.benefits-list h2 {
+    margin-bottom: 10px; /* Space below the heading */
+}
+.blue-text {
+    color: #0056b3; /* Makes the text blue */
+}
