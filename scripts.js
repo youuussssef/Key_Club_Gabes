@@ -50,3 +50,29 @@ setInterval(nextSlide, 3000);
 
 // Show the first slide
 showSlide(currentIndex);
+// Get modal elements
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modal-title');
+const modalImage = document.getElementById('modal-image');
+const modalDescription = document.getElementById('modal-description');
+const closeModal = document.getElementById('close');
+
+// Function to open the modal
+function openModal(title, image, description) {
+    modalTitle.textContent = title;
+    modalImage.src = image;
+    modalDescription.textContent = description;
+    modal.style.display = 'flex';
+}
+
+// Close modal when clicking on the close button
+closeModal.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside of modal content
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}

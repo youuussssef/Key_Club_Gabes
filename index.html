@@ -86,39 +86,70 @@
         <p class="about-text">
             The Key Club Gabes Coast is an international organization led by high school students that focuses on service, character development, and leadership skills. As the first branch in Africa, it is part of Key Club International, the oldest and largest service program for high school students. Connected to the global Kiwanis family, Key Club members are dedicated to improving their communities and making a positive impact on the lives of children. With a vision of being compassionate and competent servant leaders, the club promotes core values of leadership, character building, kindness, and inclusivity, fostering a culture where members not only serve others but also grow personally and collectively.
         </p>
-        <section id="history">
-            <h2>Our History</h2>
-        </section>
-        <section class="timeline">
-            <div class="container left">
-                <div class="content">
-                    <h2>2021</h2>
-                    <img src="KCGC/covid19.png" alt="Event Image">
+        <section class="history-slider">
+            <div class="history-slide">
+                <img src="KCGC/covid19.png" alt="2021 Event">
+                <h2>2021</h2>
+                <p>COVID-19 Awareness Video</p>
+                <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
+                <div class="full-description" style="display: none;">
                     <p>COVID-19 Awareness Video: An educational video created to raise awareness about the essential health measures during the COVID-19 pandemic, offering practical advice on how to protect oneself and others.</p>
                 </div>
             </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>2022</h2>
-                    <img src="KCGC/nebras.jpg" alt="Event Image">
+            
+            <div class="history-slide">
+                <img src="KCGC/nebras.jpg" alt="2022 Event">
+                <h2>2022</h2>
+                <p>Podcast Success Story with Nebrass Jmal</p>
+                <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
+                <div class="full-description" style="display: none;">
                     <p>Podcast Success Story with Nebrass Jmal: An inspiring podcast where Nebrass Jmal shares her exceptional journey, successes, and the lessons learned along the way, motivating members to pursue their dreams and overcome obstacles.</p>
                 </div>
             </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>2023</h2>
-                    <img src="KCGC/anniv n 1.jpg" alt="Event Image">
+        
+            <div class="history-slide">
+                <img src="KCGC/anniv n 1.jpg" alt="2023 Event">
+                <h2>2023</h2>
+                <p>1st Anniversary of the Club</p>
+                <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
+                <div class="full-description" style="display: none;">
                     <p>1st Anniversary of the Club: The celebration of the club’s first anniversary, highlighting key moments and achievements from the past year, while looking forward to a bright future of collective growth and success.</p>
                 </div>
             </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>2024</h2>
-                    <img src="KCGC/fete des meres.jpg" alt="Event Image">
+        
+            <div class="history-slide">
+                <img src="KCGC/fete des meres.jpg" alt="2024 Event">
+                <h2>2024</h2>
+                <p>International Day of Older Persons</p>
+                <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
+                <div class="full-description" style="display: none;">
                     <p>International Day of Older Persons: A day dedicated to honoring and recognizing older individuals, with activities and discussions focused on raising awareness about the importance of inclusion and respect for the elderly in society.</p>
                 </div>
             </div>
         </section>
+        
+        <!-- Include the script for toggle functionality -->
+        <script>
+            function toggleDescription(button) {
+                // Prevent the default anchor behavior (no page scroll)
+                event.preventDefault();
+        
+                // Get the parent of the button (the .history-slide)
+                const slide = button.closest('.history-slide');
+                
+                // Find the full description element inside the slide
+                const fullDescription = slide.querySelector('.full-description');
+                
+                // Toggle visibility of the description
+                if (fullDescription.style.display === 'none') {
+                    fullDescription.style.display = 'block';
+                    button.textContent = 'Read Less'; // Change button text
+                } else {
+                    fullDescription.style.display = 'none';
+                    button.textContent = 'Read More'; // Change button text back
+                }
+            }
+        </script>
     <section id="executive-board">
         <h2>Executive Board</h2>
         <p class="large-text">Meet our dedicated Executive Board, the driving force behind KCGC World.</p>

@@ -1934,3 +1934,87 @@ body.benefits-page {
         line-height: 1.4;
     }
 }
+/* Add styles for the history slider */
+.history-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.history-slide {
+    min-width: 300px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.history-slide img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+.history-slide h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 10px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Modal overlay styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 1.5em;
+}
+/* Add styles for the hidden description */
+.full-description {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 10px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
