@@ -89,7 +89,7 @@ nav ul li a:hover {
 /* About Section Styles */
 section#about {
     background-color: #ffffff;
-    padding: 50px 20px;
+    padding: 0px -6px;;
     text-align: center;
 }
 
@@ -2017,4 +2017,97 @@ body.benefits-page {
 
 .read-more:hover {
     background-color: #0056b3;
+}
+/* Styling for the title */
+.history-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.history-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #4CAF50;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Styling the slides */
+.history-slide {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.history-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.history-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Year (h3) styling */
+.history-slide h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Short description */
+.history-slide p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Read More button */
+.read-more {
+    display: inline-block;
+    background-color: #302de6;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    background-color: #302de6;
+    transform: translateY(-3px);
+}
+
+/* Full description styling */
+.full-description {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: left;
+    color: #444;
+    display: none; /* Hidden by default */
 }
