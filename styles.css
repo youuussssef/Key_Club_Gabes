@@ -2111,3 +2111,10 @@ body.benefits-page {
     color: #444;
     display: none; /* Hidden by default */
 }
+#executive-board-photo {
+    margin-bottom: 30px; /* Adds space below the image */
+}
+
+.executive-member {
+    margin-top: 20px; /* Adds consistent space between members */
+}
