@@ -2121,45 +2121,23 @@ body.benefits-page {
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 20px; /* Spacing from bottom */
-    right: 20px; /* Spacing from right */
+    bottom: 20px; /* Adjust for spacing from bottom */
+    right: 20px; /* Adjust for spacing from right */
     display: none; /* Hidden by default */
-    background: linear-gradient(135deg, #007BFF, #0056b3); /* Gradient blue */
+    background-color: #007BFF; /* Blue button */
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     border-radius: 50%;
-    width: 60px; /* Slightly larger size */
-    height: 60px;
-    line-height: 60px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     text-decoration: none;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for a floating effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 .back-to-top:hover {
-    background: linear-gradient(135deg, #0056b3, #003f7d); /* Darker gradient on hover */
-    transform: scale(1.15); /* Slightly enlarges on hover */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-}
-
-/* Show button when scrolling down */
-.back-to-top.visible {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}      
