@@ -168,19 +168,19 @@
             <div class="history-slide">
                 <img src="KCGC/7ar9a.png" alt="2024 Event">
                 <h2>May 26, 2024</h2>
-                <p>Journee Mondiale De La Prevention De Suicide :</p>
+                <p>Short Film for World Suicide Prevention Day:</p>
                 <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
                 <div class="full-description" style="display: none;">
-                    <p>A heartfelt video paying tribute to mothers worldwide, sharing messages of love and appreciation, and celebrating their crucial role in society.</p>
+                    <p>The club produced a short film highlighting the life of a young boy who endures severe hardships, leading him to make the desperate decision to attempt illegal immigration. The tragic outcome serves as a powerful narrative for World Suicide Prevention Day, shedding light on the emotional struggles faced by many and the consequences of untreated mental health issues. This film aims to raise awareness and spark conversations about the importance of mental well-being and support systems.</p>
                 </div>
             </div>
             <div class="history-slide">
                 <img src="KCGC/octobre rose.jpg" alt="2024 Event">
                 <h2>May 26, 2024</h2>
-                <p> Podcast Otobre Rose :</p>
+                <p>Podcast for Breast Cancer Awareness Month :</p>
                 <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
                 <div class="full-description" style="display: none;">
-                    <p>A heartfelt video paying tribute to mothers worldwide, sharing messages of love and appreciation, and celebrating their crucial role in society.</p>
+                    <p>In recognition of Breast Cancer Awareness Month, the club hosted a podcast featuring Dr. Ghada Chine, a renowned gynecologist, who provided expert insights into breast cancer prevention, early detection, and the importance of regular screenings. The episode served as a valuable resource for listeners, helping to spread awareness about the disease and encourage proactive health measures within the community.</p>
                 </div>
             </div>
            
@@ -356,8 +356,33 @@
             </div>
         </div>
         <body class="home">
-            
+           <!-- Back to Top Button -->
+<!-- Back to Top Button -->
+<a href="#" id="back-to-top" class="back-to-top" title="Back to Top">&#8679;</a>
+<script>
+    // Select the button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    // Show or hide the button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    // Smooth scroll to top when button is clicked
+    backToTopButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
         </body>
+
         
 
     </section>
