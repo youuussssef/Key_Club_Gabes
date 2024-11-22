@@ -2199,3 +2199,30 @@ body.benefits-page {
     background-color: #0077b5;
     color: white;
 }
+.insta-box-link {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #020202; /* Instagram pink */
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #1b6bda;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.insta-box-link:hover {
+    background-color: #1b6bda;
+    color: #ffffff;
+}
+/* Style for post names (e.g., C.C Communication) */
+.bureau-member h3 {
+    color: #0077cc; /* Blue color */
+    font-size: 20px; /* Adjust font size */
+    font-weight: bold; /* Make it bold */
+    margin: 10px 0; /* Add some spacing */
+    text-transform: uppercase; /* Optional: make it all caps */
+    letter-spacing: 1px; /* Add spacing between letters */
+}
