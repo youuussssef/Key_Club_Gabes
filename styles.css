@@ -2283,7 +2283,7 @@ nav ul li a:hover {
     font-size: 55px;
     z-index: 20;
     position: absolute;
-    right: -185px;
+    right: -180x;
     top: 55%;
     transform: translateY(-50%);
 }
