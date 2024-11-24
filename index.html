@@ -44,12 +44,16 @@
 <body> 
     
     <header>
-        
         <div class="header">
             <a href="index.html"> <!-- Link only on the logo -->
                 <img src="KCGC/logo.jpg" alt="Your Logo" class="logo">
             </a>
             <span class="club-name">KEY CLUB</span> <!-- Static text next to the logo -->
+            
+            <!-- Hamburger menu icon -->
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
         </div>
         
         <nav>
@@ -90,7 +94,7 @@
             <h2>Our History</h2> <!-- Title -->
         <section class="history-slider">
             <div class="history-slide">
-                <img src="KCGC/covid19.png" alt="2021 Event">
+                <img src="KCGC/covid19.jpg" alt="2021 Event">
                 <h2>October, 2021
                 </h2>
                 <p>COVID-19 Awareness Video</p>
@@ -102,7 +106,7 @@
             </div>
             
             <div class="history-slide">
-                <img src="KCGC/nebras.jpg" alt="2022 Event">
+                <img src="KCGC/nebras (2).jpg" alt="2022 Event">
                 <h2>July, 2022</h2>
                 <p>Podcast Success Story with Nebrass Jmal</p>
                 <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
@@ -113,7 +117,7 @@
             </div>
         
             <div class="history-slide">
-                <img src="KCGC/anniv n 1.jpg" alt="2023 Event">
+                <img src="KCGC/anniv1.jpg" alt="2023 Event">
                 <h2>September, 2022</h2>
                 <p>1st Anniversary of the Club</p>
                 <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
@@ -144,7 +148,7 @@
                 </div>
             </div>
             <div class="history-slide">
-                <img src="KCGC/passation1.jpg" alt="2024 Event">
+                <img src="KCGC/passa1.jpg" alt="2024 Event">
                 <h2>July, 2023</h2>
                 <p>1st Leadership Handover and Collar Ceremony :</p>
                 <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
@@ -154,7 +158,7 @@
                 </div>
             </div>
             <div class="history-slide">
-                <img src="KCGC/anniv n 2.jpg" alt="2024 Event">
+                <img src="KCGC/anniv2.jpg" alt="2024 Event">
                 <h2>October, 2023</h2>
                 <p>2nd Anniversary of the Club:</p>
                 <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
@@ -174,7 +178,7 @@
                 </div>
             </div>
             <div class="history-slide">
-                <img src="KCGC/7ar9a.png" alt="2024 Event">
+                <img src="KCGC/7ar9a.jpg" alt="2024 Event">
                 <h2>May, 2024</h2>
                 <p>Short Film for World Suicide Prevention Day:</p>
                 <a href="#" class="read-more" onclick="toggleDescription(this); return false;">Read More</a>
@@ -390,6 +394,12 @@
             behavior: 'smooth'
         });
     });
+</script>
+<script>
+    function toggleMobileMenu() {
+        const menu = document.querySelector('nav ul');
+        menu.classList.toggle('active');
+    }
 </script>
         </body>
 

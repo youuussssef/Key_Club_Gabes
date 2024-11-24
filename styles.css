@@ -2226,3 +2226,190 @@ body.benefits-page {
     text-transform: uppercase; /* Optional: make it all caps */
     letter-spacing: 1px; /* Add spacing between letters */
 }
+/* General Reset */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative; /* Ensure that the hamburger menu is positioned relative to the header */
+    z-index: 10;
+}
+
+.logo {
+    height: 50px;
+}
+
+.club-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Regular Menu */
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-size: 18px;
+    color: white; /* Default white color for desktop */
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 55px;
+    z-index: 20;
+    position: absolute;
+    right: -210px;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+/* Dropdown Menu */
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav .dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+}
+
+nav .dropdown-content a:hover {
+    background-color: #007BFF;
+    color: rgb(255, 255, 255);
+}
+
+/* Responsive Styling for Mobile */
+@media screen and (max-width: 768px) {
+    /* Hide the regular menu on mobile */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        max-height: 90vh;
+        overflow-y: auto;
+        z-index: 9999;
+    }
+
+    /* Show the hamburger menu on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Show the menu when the 'active' class is added */
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Style for mobile links (black color in the hamburger menu) */
+    nav ul li a {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+        color: #333; /* Change text color to black for mobile */
+    }
+
+    /* Add space between the links */
+    nav ul li {
+        margin-bottom: 15px; /* Add more space between the items */
+    }
+
+    /* Ensure dropdowns in mobile menu are visible */
+    nav .dropdown-content {
+        position: static;
+        box-shadow: none;
+    }
+
+    nav .dropdown-content a {
+        padding: 10px 20px;
+    }
+
+    /* Set icon color to black for mobile */
+    nav ul li a i {
+        color: #000000; /* Make icons black on mobile */
+    }
+}
+
+/* Ensure mobile menu icons are black */
+@media screen and (max-width: 768px) {
+    /* Set icon color to black for mobile */
+    nav ul li a i {
+        color: #000000; /* Make icons black */
+    }
+}
+/* Ensure Contact page has black icons and text in hamburger menu on mobile */
+@media screen and (max-width: 768px) {
+    body.contact-page nav ul li a {
+        color: #000000 !important; /* Set the text color to black on mobile */
+    }
+
+    body.contact-page nav ul li a i {
+        color: #000000 !important; /* Ensure icons are black on mobile */
+    }
+
+    /* Add space between menu items (Home, Membership, Gallery, etc.) on mobile */
+    body.contact-page nav ul li {
+        margin-bottom: 15px !important; /* Add spacing between menu items */
+    }
+
+    /* Style for the hamburger menu links on mobile */
+    body.contact-page nav ul {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Ensure the mobile menu items are aligned and styled correctly */
+    body.contact-page nav ul li a {
+        padding: 10px 20px !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    /* Make icons black on mobile for Contact page */
+    body.contact-page nav ul li a i {
+        color: #000000 !important; /* Force black icon color on mobile */
+    }
+}

@@ -14,11 +14,16 @@
 <!-- Header Section -->
 <header>
     <div class="header">
-        <a href="index.html">
+        <a href="index.html"> <!-- Link only on the logo -->
             <img src="KCGC/logo.jpg" alt="Your Logo" class="logo">
         </a>
-        <span class="club-name">KEY CLUB</span>
+        <span class="club-name">KEY CLUB</span> <!-- Static text next to the logo -->
+        <!-- Hamburger menu icon -->
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
     </div>
+
     <nav>
         <ul>
             <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
@@ -37,6 +42,7 @@
         </ul>
     </nav>
 </header>
+
 
 <!-- Main Content -->
 <main>
@@ -76,5 +82,11 @@
         <p>&copy; 2024 KCGC World. All rights reserved.</p>
     </div>
 </footer>
+<script>
+    function toggleMobileMenu() {
+        const menu = document.querySelector('nav ul');
+        menu.classList.toggle('active');
+    }
+</script>
 </body>
 </html>
