@@ -2238,27 +2238,35 @@ body, ul, li, a {
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Distribute space between logo and hamburger */
     padding: 10px 20px;
-    position: relative; /* Ensure that the hamburger menu is positioned relative to the header */
+    background-color: #0056b3;
+    position: relative; /* To allow precise positioning of hamburger */
     z-index: 10;
 }
 
+/* Logo Section */
 .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
     height: 50px;
+    margin-right: 10px;
 }
 
 .club-name {
     font-size: 24px;
     font-weight: bold;
-    margin-left: 10px;
+    color: white;
 }
 
 /* Regular Menu */
 nav ul {
     display: flex;
-    justify-content: space-between;
-    list-style: none;
+    align-items: center;
+    margin-left: auto; /* Ensure the nav menu stays to the right of the logo */
 }
 
 nav ul li {
@@ -2267,7 +2275,7 @@ nav ul li {
 
 nav ul li a {
     font-size: 18px;
-    color: white; /* Default white color for desktop */
+    color: white; /* White for desktop */
     display: flex;
     align-items: center;
 }
@@ -2279,11 +2287,12 @@ nav ul li a:hover {
 /* Hamburger Menu */
 .hamburger {
     display: none;
+    font-size: 40px;
+    color: white;
     cursor: pointer;
-    font-size: 55px;
-    z-index: 20;
+    margin-left: auto;
     position: absolute;
-    right: -180x;
+    right: -181px;
     top: 55%;
     transform: translateY(-50%);
 }
@@ -2311,30 +2320,27 @@ nav .dropdown-content a {
 
 nav .dropdown-content a:hover {
     background-color: #007BFF;
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 /* Responsive Styling for Mobile */
 @media screen and (max-width: 768px) {
-    /* Hide the regular menu on mobile */
+    /* Hide regular menu */
     nav ul {
         display: none;
         flex-direction: column;
         align-items: flex-start;
-        background-color: rgb(255, 255, 255);
+        background-color: #fff;
         position: absolute;
         top: 70px;
         right: 0;
         width: 100%;
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        max-height: 90vh;
-        overflow-y: auto;
         z-index: 9999;
     }
 
-    /* Show the hamburger menu on mobile */
+    /* Show the hamburger on mobile */
     .hamburger {
         display: block;
     }
@@ -2344,72 +2350,34 @@ nav .dropdown-content a:hover {
         display: flex;
     }
 
-    /* Style for mobile links (black color in the hamburger menu) */
+    /* Mobile Menu Links */
     nav ul li a {
         padding: 10px 20px;
         width: 100%;
         text-align: left;
-        color: #333; /* Change text color to black for mobile */
+        color: #333;
     }
 
-    /* Add space between the links */
+    /* Add space between links */
     nav ul li {
-        margin-bottom: 15px; /* Add more space between the items */
-    }
-
-    /* Ensure dropdowns in mobile menu are visible */
-    nav .dropdown-content {
-        position: static;
-        box-shadow: none;
-    }
-
-    nav .dropdown-content a {
-        padding: 10px 20px;
-    }
-
-    /* Set icon color to black for mobile */
-    nav ul li a i {
-        color: #000000; /* Make icons black on mobile */
+        margin-bottom: 10px;
     }
 }
-
-/* Ensure mobile menu icons are black */
-@media screen and (max-width: 768px) {
-    /* Set icon color to black for mobile */
-    nav ul li a i {
-        color: #000000; /* Make icons black */
-    }
+/* Ensure icons and their names in the Contact menu are always black */
+body.contact-page nav ul li a {
+    color: #000000 !important; /* Force text color to black */
 }
-/* Ensure Contact page has black icons and text in hamburger menu on mobile */
-@media screen and (max-width: 768px) {
+
+body.contact-page nav ul li a i {
+    color: #000000 !important; /* Force icon color to black */
+}
+/* Icons and names in the header (PC only, forced white color) */
+@media screen and (min-width: 769px) {
     body.contact-page nav ul li a {
-        color: #000000 !important; /* Set the text color to black on mobile */
+        color: white !important; /* Force text color to white */
     }
 
     body.contact-page nav ul li a i {
-        color: #000000 !important; /* Ensure icons are black on mobile */
-    }
-
-    /* Add space between menu items (Home, Membership, Gallery, etc.) on mobile */
-    body.contact-page nav ul li {
-        margin-bottom: 15px !important; /* Add spacing between menu items */
-    }
-
-    /* Style for the hamburger menu links on mobile */
-    body.contact-page nav ul {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-    }
-
-    /* Ensure the mobile menu items are aligned and styled correctly */
-    body.contact-page nav ul li a {
-        padding: 10px 20px !important;
-        width: 100% !important;
-        text-align: left !important;
-    }
-
-    /* Make icons black on mobile for Contact page */
-    body.contact-page nav ul li a i {
-        color: #000000 !important; /* Force black icon color on mobile */
+        color: white !important; /* Force icon color to white */
     }
 }
