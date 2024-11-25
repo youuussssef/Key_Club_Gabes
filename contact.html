@@ -148,37 +148,70 @@
                 <img src="KCGC/logo.jpg" alt="Your Logo" class="logo">
             </a>
             <span class="club-name">KEY CLUB</span> <!-- Static text next to the logo -->
+    
             <!-- Hamburger menu icon -->
             <div class="hamburger" onclick="toggleMobileMenu()">
                 <i class="fa fa-bars"></i>
             </div>
         </div>
-    
         <nav>
             <ul>
                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                <br>
+              
+    
+                <!-- Membership Dropdown -->
+
                 <li class="dropdown">
+                    <br>
+    
                     <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-user"></i> Membership</a>
+                    <br>
+    
                     <div class="dropdown-content">
                         <a href="join.html">How to Join</a>
                         <br>
+    
                         <a href="benefits.html">Benefits</a>
                         <br>
+    
                         <a href="products.html">Our Products</a>
+                        <br>
+    
                     </div>
                 </li>
+                <li><a href="actions.html"><i class="fa fa-tasks"></i> Actions</a></li>
                 <br>
-                <li><a href="actions.html"><i class="fa fa-tasks"></i> Actions</a></li> 
-                <br>
+    
                 <li><a href="news_paper.html"><i class="fa fa-newspaper"></i> News Paper</a></li>
                 <br>
+    
                 <li><a href="gallery.html"><i class="fa fa-image"></i> Gallery</a></li>
                 <br>
+    
                 <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
+    
+    <script>
+        // Function to toggle the mobile menu visibility
+        function toggleMobileMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+    
+        // Function to close the mobile menu when clicking outside
+        function closeMenuOnClickOutside(event) {
+            const menu = document.querySelector('nav ul');
+            const hamburger = document.querySelector('.hamburger');
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        }
+    
+        // Adding event listener to the document
+        document.addEventListener('click', closeMenuOnClickOutside);
+    </script>
 
     <main>
         <h2>Contact Us</h2>
