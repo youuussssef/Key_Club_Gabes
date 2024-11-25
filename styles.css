@@ -2512,10 +2512,10 @@ body.contact-page nav ul li a i {
     }
 }
 .member-photo {
-    width: 120px; /* Slightly smaller size */
-    height: 120px; /* Same as width for a perfect circle */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image fits properly */
-    border: 3px solid blue; /* Adds a blue frame around the photos */
-    margin-bottom: 10px; /* Space below the image */
+    width: 120px !important; /* Slightly smaller size */
+    height: 120px !important; /* Same as width for a perfect circle */
+    border-radius: 50% !important; /* Makes the image circular */
+    object-fit: cover !important; /* Ensures the image fits properly */
+    border: 3px solid blue !important; /* Adds a blue frame around the photos */
+    margin-bottom: 10px !important; /* Space below the image */
 }
