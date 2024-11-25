@@ -2381,3 +2381,141 @@ body.contact-page nav ul li a i {
         color: white !important; /* Force icon color to white */
     }
 }
+/* About Section Styles */
+#about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e0f7fa; /* Light blue section background */
+}
+
+#about h2 {
+    font-size: 32px;
+    color: #0056b3; /* Deep blue */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Message Bubble Style */
+.message-bubble {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff; /* Bubble background */
+    border: 2px solid #0056b3; /* Border matches theme */
+    border-radius: 20px; /* Rounded edges */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Dark gray text */
+    text-align: left;
+}
+
+/* Message Bubble Tail */
+.message-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 30px; /* Adjust tail position */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 0;
+    border-color: #ffffff transparent transparent transparent; /* Matches bubble background */
+    transform: rotate(-45deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add depth to the tail */
+}
+
+/* Hover Effect */
+.message-bubble:hover {
+    background-color: #f0f8ff; /* Lighter blue hover effect */
+    transform: translateY(-3px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .message-bubble {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+/* Executive Member Container */
+.executive-member {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular photos */
+    object-fit: cover;
+    border: 3px solid #0056b3; /* Border matches theme */
+}
+
+/* Message Bubble Style */
+.message-bubble {
+    position: relative;
+    padding: 15px;
+    background: #ffffff; /* Bubble background */
+    border: 2px solid #0056b3; /* Bubble border */
+    border-radius: 20px; /* Rounded edges */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: left;
+}
+
+/* Bubble Tail */
+.message-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 30px; /* Adjust tail position */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 0;
+    border-color: #ffffff transparent transparent transparent; /* Matches bubble background */
+    transform: rotate(-45deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add depth */
+}
+
+/* Hover Effect */
+.message-bubble:hover {
+    background-color: #f0f8ff; /* Lighter blue */
+    transform: translateY(-3px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .executive-member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .member-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .message-bubble {
+        text-align: center;
+    }
+}
+.member-photo {
+    width: 120px; /* Slightly smaller size */
+    height: 120px; /* Same as width for a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits properly */
+    border: 3px solid blue; /* Adds a blue frame around the photos */
+    margin-bottom: 10px; /* Space below the image */
+}
