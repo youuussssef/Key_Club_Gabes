@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://key-club-gabes.vercel.app/sitemap.xml
