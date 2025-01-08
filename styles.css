@@ -2527,3 +2527,60 @@ body.contact-page nav ul li a i {
     border: 3px solid blue !important; /* Adds a blue frame around the photos */
     margin-bottom: 10px !important; /* Space below the image */
 }
+/* Popup container */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 15px;
+    background-color: #0056b3; /* Deep blue */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Popup text */
+.popup p {
+    margin: 0;
+    font-size: 16px;
+    flex-grow: 1; /* Allow text to take up the remaining space */
+}
+
+/* Popup link */
+#popup-link {
+    color: #ffd700; /* Gold */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Close button */
+#close-popup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Popup hidden state (optional) */
+.popup.hidden {
+    display: none !important;
+}
+/* Animation for popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
