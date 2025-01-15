@@ -15,6 +15,48 @@
             padding: 0;
         }
 
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            max-height: 50px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            padding: 10px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        nav ul a:hover {
+            color: #cce7ff;
+        }
+
         main {
             max-width: 800px;
             margin: 30px auto;
@@ -39,45 +81,44 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        nav ul {
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0056b3;
+            color: #ffffff;
+            font-size: 14px;
+            margin-top: 20px;
         }
 
-        nav ul li {
-            padding: 10px;
+        footer .social-icon {
+            height: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
         }
 
-        nav ul a {
-            text-decoration: none;
+        footer .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Countdown Timer */
+        .countdown-timer {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
             color: #0056b3;
-            transition: color 0.3s;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f0f8ff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        nav ul a:hover {
-            color: #004494;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .logo {
-            max-height: 50px;
+        .countdown-timer span {
+            font-weight: bold;
         }
 
         /* Responsive Styles */
         @media screen and (max-width: 768px) {
-            main {
-                margin: 20px 10px;
-                padding: 15px;
-            }
-
             .hamburger {
                 display: block;
             }
@@ -85,7 +126,7 @@
             nav ul {
                 flex-direction: column;
                 display: none;
-                background-color: #ffffff;
+                background-color: #0056b3;
                 position: absolute;
                 width: 100%;
                 top: 60px;
@@ -101,6 +142,10 @@
                 text-align: center;
                 padding: 15px 0;
                 border-bottom: 1px solid #ddd;
+            }
+
+            .countdown-timer {
+                font-size: 16px;
             }
         }
     </style>
@@ -136,6 +181,12 @@
     </header>
 
     <main>
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown-timer">
+            <span>Time Left:</span>
+            <span id="timer"></span>
+        </div>
+
         <div style="text-align: center; margin-bottom: 20px;">
             <img src="KCGC/recrutement.jpeg" alt="Club Members Together" style="max-width: 100%; height: auto; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
         </div>
@@ -156,7 +207,6 @@
             <a href="https://www.tiktok.com/@keyclubgabescoast?" target="_blank">
                 <img src="https://static.vecteezy.com/system/resources/previews/021/495/986/non_2x/tiktok-social-media-logo-icon-free-png.png" alt="TikTok" class="social-icon">
             </a>
-            <!-- Added YouTube Icon -->
             <a href="https://www.youtube.com/@keyclubgabescoast" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/512px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" class="social-icon">
             </a>
@@ -165,10 +215,41 @@
     </footer>
 
     <script>
-        function toggleMobileMenu() {
-            const menu = document.querySelector('nav ul');
-            menu.classList.toggle('active');
+        function initializeCountdown() {
+            const timerElement = document.getElementById("timer");
+            const now = new Date();
+            const currentDay = now.getDay();
+    
+            // Calculate the target date (next Friday at midnight)
+            const daysToFriday = (5 - currentDay + 7) % 7 || 7;
+            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + daysToFriday);
+            targetDate.setHours(0, 0, 0, 0);
+    
+            function updateCountdown() {
+                const now = new Date();
+                const remainingTime = targetDate - now;
+    
+                if (remainingTime <= 0) {
+                    timerElement.textContent = "The countdown has ended!";
+                    clearInterval(interval); // Stop updating when the time is up
+                    return;
+                }
+    
+                const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+    
+                timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+    
+            // Update the countdown every second
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Run once immediately
         }
+    
+        initializeCountdown();
     </script>
+    
 </body>
 </html>
