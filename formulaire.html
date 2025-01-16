@@ -218,12 +218,9 @@
         function initializeCountdown() {
             const timerElement = document.getElementById("timer");
             const now = new Date();
-            const currentDay = now.getDay();
     
-            // Calculate the target date (next Friday at midnight)
-            const daysToFriday = (5 - currentDay + 7) % 7 || 7;
-            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + daysToFriday);
-            targetDate.setHours(0, 0, 0, 0);
+            // Calculate the target date (tomorrow at 9:00 PM)
+            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 21, 0, 0);
     
             function updateCountdown() {
                 const now = new Date();
