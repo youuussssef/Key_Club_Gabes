@@ -219,8 +219,8 @@
             const timerElement = document.getElementById("timer");
             const now = new Date();
     
-            // Calculate the target date (tomorrow at 9:00 PM)
-            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 21, 0, 0);
+            // Set the target date to today at midnight
+            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
     
             function updateCountdown() {
                 const now = new Date();
@@ -232,12 +232,11 @@
                     return;
                 }
     
-                const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
     
-                timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                timerElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
             }
     
             // Update the countdown every second
@@ -247,6 +246,7 @@
     
         initializeCountdown();
     </script>
+    
     
 </body>
 </html>
