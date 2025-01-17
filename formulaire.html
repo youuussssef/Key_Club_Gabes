@@ -219,8 +219,8 @@
             const timerElement = document.getElementById("timer");
             const now = new Date();
     
-            // Set the target date to today at midnight
-            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+            // Set the target date to today at 10 PM
+            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0, 0);
     
             function updateCountdown() {
                 const now = new Date();
