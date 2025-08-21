@@ -154,7 +154,7 @@
     <header>
         <div class="header">
             <a href="index.html">
-                <img src="KCGC/logo.jpg" alt="Your Logo" class="logo">
+                <img src="KCGC/logo.png" alt="Your Logo" class="logo">
             </a>
             <span class="club-name">KEY CLUB</span>
             <div class="hamburger" onclick="toggleMobileMenu()">
@@ -217,36 +217,43 @@
     <script>
         function initializeCountdown() {
             const timerElement = document.getElementById("timer");
-            const now = new Date();
-    
-            // Set target date to 4 days from now
-            const targetDate = new Date(now.getTime() + 4 * 24 * 60 * 60 * 1000);
-    
+        
+            // Try to load existing target date
+            let targetDate = localStorage.getItem("countdownTarget");
+        
+            if (targetDate) {
+                targetDate = new Date(targetDate);
+            } else {
+                // If none saved, set 4 days from now
+                targetDate = new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000);
+                localStorage.setItem("countdownTarget", targetDate);
+            }
+        
             function updateCountdown() {
                 const now = new Date();
                 const remainingTime = targetDate - now;
-    
+        
                 if (remainingTime <= 0) {
                     timerElement.textContent = "The countdown has ended!";
-                    clearInterval(interval); // Stop updating when the time is up
+                    clearInterval(interval);
+                    localStorage.removeItem("countdownTarget"); // reset if finished
                     return;
                 }
-    
+        
                 const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-    
+        
                 timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
-    
-            // Update the countdown every second
+        
             const interval = setInterval(updateCountdown, 1000);
-            updateCountdown(); // Run once immediately
+            updateCountdown();
         }
-    
         initializeCountdown();
-    </script>
+        </script>
+        
     
     
     
