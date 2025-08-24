@@ -213,21 +213,14 @@
             <p>&copy; 2024 KCGC World. All rights reserved.</p>
         </div>
     </footer>
-
     <script>
         function initializeCountdown() {
             const timerElement = document.getElementById("timer");
         
-            // Try to load existing target date
-            let targetDate = localStorage.getItem("countdownTarget");
+            const now = new Date();
         
-            if (targetDate) {
-                targetDate = new Date(targetDate);
-            } else {
-                // If none saved, set 4 days from now
-                targetDate = new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000);
-                localStorage.setItem("countdownTarget", targetDate);
-            }
+            // Always set target to tomorrow at 2:00 AM
+            const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 2, 0, 0, 0);
         
             function updateCountdown() {
                 const now = new Date();
@@ -236,16 +229,14 @@
                 if (remainingTime <= 0) {
                     timerElement.textContent = "The countdown has ended!";
                     clearInterval(interval);
-                    localStorage.removeItem("countdownTarget"); // reset if finished
                     return;
                 }
         
-                const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+                const hours = Math.floor((remainingTime / (1000 * 60 * 60)));
+                const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
+                const seconds = Math.floor((remainingTime / 1000) % 60);
         
-                timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                timerElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
             }
         
             const interval = setInterval(updateCountdown, 1000);
@@ -253,6 +244,8 @@
         }
         initializeCountdown();
         </script>
+        
+        
         
     
     
